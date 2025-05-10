@@ -4,6 +4,7 @@ import string
 from collections import defaultdict
 from pathlib import Path
 from datetime import datetime
+from fpdf import FPDF
 
 # Files relative to this script
 BASE_DIR = Path(__file__).parent
@@ -15,6 +16,16 @@ EXAMS_DIR = BASE_DIR / "exams"
 TIMESTAMP = datetime.now().strftime("%Y%m%d_%H%M%S")
 EXAM_FILE = EXAMS_DIR / f"{TIMESTAMP}_{LICENSE_CLASS}_exam.txt"
 KEY_FILE = EXAMS_DIR / f"{TIMESTAMP}_{LICENSE_CLASS}_answer_key.txt"
+EXAM_PDF = EXAMS_DIR / f"{TIMESTAMP}_{LICENSE_CLASS}_exam.pdf"
+KEY_PDF = EXAMS_DIR / f"{TIMESTAMP}_{LICENSE_CLASS}_answer_key.pdf"
+
+# PDF formatting defaults for accessibility
+PDF_FONT = "Arial"
+PDF_FONT_SIZE = 18  # Increased size for better visibility
+PDF_FONT_STYLE = "B"  # Bold font
+PDF_LINE_HEIGHT = 12
+PDF_MARGIN = 20
+
 
 def load_question_pool(filename):
     """
@@ -28,6 +39,7 @@ def load_question_pool(filename):
     """
     with open(filename, 'r', encoding='utf-8') as f:
         return json.load(f)
+
 
 def generate_exam_by_subelement(question_pool):
     """
@@ -46,43 +58,67 @@ def generate_exam_by_subelement(question_pool):
     random.shuffle(exam)
     return exam
 
-def write_exam_and_key(exam, exam_path, key_path):
+
+def write_exam_and_key(exam, exam_path, key_path, exam_pdf_path, key_pdf_path):
     """
-    Write the practice exam and corresponding answer key to text files.
+    Write the practice exam and corresponding answer key to text and PDF files.
 
     Args:
         exam (list): The list of selected exam questions.
-        exam_path (Path): Path to write the exam file.
-        key_path (Path): Path to write the answer key file.
+        exam_path (Path): Path to write the exam text file.
+        key_path (Path): Path to write the answer key text file.
+        exam_pdf_path (Path): Path to write the exam PDF file.
+        key_pdf_path (Path): Path to write the answer key PDF file.
     """
     letters = list(string.ascii_uppercase)
     EXAMS_DIR.mkdir(parents=True, exist_ok=True)
 
-    with open(exam_path, 'w', encoding='utf-8') as ex_f, \
-         open(key_path,  'w', encoding='utf-8') as key_f:
-        # Write headers
-        ex_f.write(f"Amateur Radio {LICENSE_CLASS.capitalize()} License Practice Exam\n")
-        ex_f.write(f"Filename: {exam_path.name}\n")
-        ex_f.write("=" * 60 + "\n\n")
+    exam_text = []
+    key_text = []
 
-        key_f.write(f"Answer Key for {LICENSE_CLASS.capitalize()} Practice Exam\n")
-        key_f.write(f"Filename: {key_path.name}\n")
-        key_f.write("=" * 60 + "\n\n")
+    # Headers
+    exam_text.append(f"Amateur Radio {LICENSE_CLASS.capitalize()} License Practice Exam")
+    exam_text.append(f"Filename: {exam_path.name}\n" + "=" * 5 + "\n")
 
-        for idx, q in enumerate(exam, start=1):
-            # Shuffle answers and track the correct one
-            answer_options = list(enumerate(q['answers']))
-            random.shuffle(answer_options)
-            correct_index = next(i for i, (orig_idx, _) in enumerate(answer_options) if orig_idx == q['correct'])
+    key_text.append(f"Answer Key for {LICENSE_CLASS.capitalize()} Practice Exam")
+    key_text.append(f"Filename: {key_path.name}\n" + "=" * 5 + "\n")
 
-            # Question block
-            ex_f.write(f"Question {idx}: ({q['id']}) {q['question']}\n")
-            for i, (_, ans_text) in enumerate(answer_options):
-                ex_f.write(f"  {letters[i]}. {ans_text}\n")
-            ex_f.write("\n")
+    for idx, q in enumerate(exam, start=1):
+        answer_options = list(enumerate(q['answers']))
+        random.shuffle(answer_options)
+        correct_index = next(i for i, (orig_idx, _) in enumerate(answer_options) if orig_idx == q['correct'])
 
-            # Answer key line
-            key_f.write(f"Question {idx} ({q['id']}): {letters[correct_index]}\n")
+        # Question block
+        exam_text.append(f"Question {idx}: ({q['id']})")
+        exam_text.append(f"{q['question']}")
+        for i, (_, ans_text) in enumerate(answer_options):
+            exam_text.append(f"  {letters[i]}. {ans_text}")
+        exam_text.append("")
+
+        key_text.append(f"Question {idx} ({q['id']}): {letters[correct_index]}")
+
+    # Write to text files
+    with open(exam_path, 'w', encoding='utf-8') as ex_f:
+        ex_f.write("\n".join(exam_text))
+
+    with open(key_path, 'w', encoding='utf-8') as key_f:
+        key_f.write("\n".join(key_text))
+
+    # Write to PDF files with font size and weight for low vision
+    def write_pdf(content_lines, pdf_path, title):
+        pdf = FPDF()
+        pdf.set_auto_page_break(auto=True, margin=PDF_MARGIN)
+        pdf.add_page()
+        pdf.set_font(PDF_FONT, style=PDF_FONT_STYLE, size=PDF_FONT_SIZE)
+        pdf.set_title(title)
+        for line in content_lines:
+            clean_line = line.encode("latin-1", "replace").decode("latin-1")
+            pdf.multi_cell(0, PDF_LINE_HEIGHT + 4, clean_line)
+        pdf.output(str(pdf_path))
+
+    write_pdf(exam_text, exam_pdf_path, f"{LICENSE_CLASS.capitalize()} Exam")
+    write_pdf(key_text, key_pdf_path, f"{LICENSE_CLASS.capitalize()} Answer Key")
+
 
 def main():
     """
@@ -95,9 +131,10 @@ def main():
 
     pool = load_question_pool(POOL_FILE)
     exam = generate_exam_by_subelement(pool)
-    write_exam_and_key(exam, EXAM_FILE, KEY_FILE)
-    print(f"Exam written to {EXAM_FILE}")
-    print(f"Answer key written to {KEY_FILE}")
+    write_exam_and_key(exam, EXAM_FILE, KEY_FILE, EXAM_PDF, KEY_PDF)
+    print(f"Exam written to {EXAM_FILE} and {EXAM_PDF}")
+    print(f"Answer key written to {KEY_FILE} and {KEY_PDF}")
+
 
 if __name__ == "__main__":
     main()
