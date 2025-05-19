@@ -1,6 +1,7 @@
 import json
 import random
 import string
+import argparse
 from collections import defaultdict
 from pathlib import Path
 from datetime import datetime
@@ -120,16 +121,36 @@ def write_exam_and_key(exam, exam_path, key_path, exam_pdf_path, key_pdf_path):
     write_pdf(key_text, key_pdf_path, f"{LICENSE_CLASS.capitalize()} Answer Key")
 
 
+def filter_no_figures(pool):
+    """
+    Filter out questions that have figures/images or reference figures.
+    """
+    def has_figure(q):
+        # Adjust this logic if your JSON uses a different key or pattern
+        if 'figure' in q or 'image' in q:
+            return True
+        if 'figure' in q.get('question', '').lower():
+            return True
+        return False
+    return [q for q in pool if not has_figure(q)]
+
+
 def main():
     """
     Main execution function that loads the pool, generates an exam,
     and writes the output files.
     """
+    parser = argparse.ArgumentParser(description="Generate a ham radio practice exam.")
+    parser.add_argument('--include-figures', action='store_true', help="Include questions with figures (default is to exclude for accessibility).")
+    args = parser.parse_args()
+
     if not POOL_FILE.exists():
         print(f"ERROR: Cannot find question pool at {POOL_FILE}")
         return
 
     pool = load_question_pool(POOL_FILE)
+    if not args.include_figures:
+        pool = filter_no_figures(pool)
     exam = generate_exam_by_subelement(pool)
     write_exam_and_key(exam, EXAM_FILE, KEY_FILE, EXAM_PDF, KEY_PDF)
     print(f"Exam written to {EXAM_FILE} and {EXAM_PDF}")
