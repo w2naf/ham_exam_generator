@@ -74,6 +74,8 @@ The question pool is stored in `pool/technician.json` and follows this structure
 - `question`: The question text.
 - `answers`: List of possible answers.
 
+Many thanks to Russ Olsen for making the U.S. amateur radio question pool available in JSON format from https://github.com/russolsen/ham_radio_question_pool.
+
 ## Customization
 
 - To modify the question pool, edit `pool/technician.json`.
