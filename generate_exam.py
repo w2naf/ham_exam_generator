@@ -90,13 +90,13 @@ def write_exam_and_key(exam, exam_path, key_path, exam_pdf_path, key_pdf_path):
         correct_index = next(i for i, (orig_idx, _) in enumerate(answer_options) if orig_idx == q['correct'])
 
         # Question block
-        exam_text.append(f"Question {idx}: ({q['id']})")
+        exam_text.append(f"{idx}: ({q['id']})")
         exam_text.append(f"{q['question']}")
         for i, (_, ans_text) in enumerate(answer_options):
             exam_text.append(f"  {letters[i]}. {ans_text}")
         exam_text.append("")
 
-        key_text.append(f"Question {idx} ({q['id']}): {letters[correct_index]}")
+        key_text.append(f"{idx} ({q['id']}): {letters[correct_index]}")
 
     # Write to text files
     with open(exam_path, 'w', encoding='utf-8') as ex_f:
