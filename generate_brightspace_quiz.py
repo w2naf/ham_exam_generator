@@ -72,7 +72,7 @@ def main():
         
         qID      = qq.get("id")
         sub_el   = qID[0:2]
-        question = qq.get("question")
+        question = f"[{qID}] " + qq.get("question")
 
         answers   = qq.get("answers")
         correct  = [0]*len(answers)
