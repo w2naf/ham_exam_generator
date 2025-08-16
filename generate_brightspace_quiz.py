@@ -85,7 +85,8 @@ def main():
         qID      = qq.get("id")
         sub_el   = qID[0:2]
         
-        question = f"[{qID}] " + qq.get("question")
+        question = f'[{qID}] ' + qq.get('question')
+        question = question.replace('"', '""')  # Escape double quotes for CSV
 
         answers   = qq.get("answers")
         correct  = [0]*len(answers)
@@ -97,11 +98,12 @@ def main():
         tta(f"ID,{qID},,,")
         tta("NewQuestion,MC,,,")
         tta(f"Title,{qID},,,")
-        tta(f"QuestionText,{question},,,")
+        tta(f'QuestionText,"{question}",,,')
         tta("Points,1,,,")
         tta("Difficulty,1,,,")
         for corr, ans in zip(correct, answers):
-            tta(f"Option,{corr},{ans},,,")
+            ans = ans.replace('"', '""')  # Escape double quotes for CSV
+            tta(f'Option,{corr},"{ans}",,,')
 
         has_fig = False
         for fig_name,fig in figs_dct.items():
