@@ -1,0 +1,407 @@
+﻿Order,qID,Module,Title
+1,T5B01,2.1,Radio Signals and Waves
+2,T5B02,2.1,Radio Signals and Waves
+3,T5B03,2.1,Radio Signals and Waves
+4,T5B04,2.1,Radio Signals and Waves
+5,T5B05,2.1,Radio Signals and Waves
+6,T5B06,2.1,Radio Signals and Waves
+7,T5B07,2.1,Radio Signals and Waves
+8,T5B08,2.1,Radio Signals and Waves
+9,T5B12,2.1,Radio Signals and Waves
+10,T5B13,2.1,Radio Signals and Waves
+11,T5A06,2.1,Radio Signals and Waves
+12,T5A12,2.1,Radio Signals and Waves
+13,T5C07,2.1,Radio Signals and Waves
+14,T5C13,2.1,Radio Signals and Waves
+15,T3B08,2.1,Radio Signals and Waves
+16,T3B09,2.1,Radio Signals and Waves
+17,T3B10,2.1,Radio Signals and Waves
+18,T5C06,2.1,Radio Signals and Waves
+19,T3B04,2.1,Radio Signals and Waves
+20,T3B05,2.1,Radio Signals and Waves
+21,T3B06,2.1,Radio Signals and Waves
+22,T3B07 ,2.1,Radio Signals and Waves
+23,T3B11,2.1,Radio Signals and Waves
+24,T7A02,2.2,Radio Equipment Basics
+25,T1F09,2.2,Radio Equipment Basics
+26,T5A01,3.1,Electricity
+27,T5A03,3.1,Electricity
+28,T5A05,3.1,Electricity
+29,T5A09,3.1,Electricity
+30,T7D01,3.1,Electricity
+31,T7D04,3.1,Electricity
+32,T5D13,3.1,Electricity
+33,T5D14,3.1,Electricity
+34,T7D02,3.1,Electricity
+35,T7D03,3.1,Electricity
+36,T7D06,3.1,Electricity
+37,T7D07,3.1,Electricity
+38,T7D10,3.1,Electricity
+39,T7D11,3.1,Electricity
+40,T0A12,3.1,Electricity
+41,T5A04,3.1,Electricity
+42,T5A07,3.1,Electricity
+43,T5A08,3.1,Electricity
+44,T5D01,3.1,Electricity
+45,T5D02,3.1,Electricity
+46,T5D03,3.1,Electricity
+47,T5D04,3.1,Electricity
+48,T5D05,3.1,Electricity
+49,T5D06,3.1,Electricity
+50,T5D07,3.1,Electricity
+51,T5D08,3.1,Electricity
+52,T5D09,3.1,Electricity
+53,T5D10,3.1,Electricity
+54,T5D11,3.1,Electricity
+55,T5D12,3.1,Electricity
+56,T5A02,3.1,Electricity
+57,T5A10,3.1,Electricity
+58,T5C08,3.1,Electricity
+59,T5C09,3.1,Electricity
+60,T5C10,3.1,Electricity
+61,T5C11,3.1,Electricity
+62,T5C01,3.2,Components and Units
+63,T5C02,3.2,Components and Units
+64,T5C03,3.2,Components and Units
+65,T5C04,3.2,Components and Units
+66,T6A01,3.2,Components and Units
+67,T6A02,3.2,Components and Units
+68,T6A03,3.2,Components and Units
+69,T6A04,3.2,Components and Units
+70,T6A05,3.2,Components and Units
+71,T6A06,3.2,Components and Units
+72,T6A07,3.2,Components and Units
+73,T6D06,3.2,Components and Units
+74,T5C05,3.2,Components and Units
+75,T5C12,3.2,Components and Units
+76,T6D08,3.2,Components and Units
+77,T6D11,3.2,Components and Units
+78,T6B01,3.2,Components and Units
+79,T6B02,3.2,Components and Units
+80,T6B03,3.2,Components and Units
+81,T6B04,3.2,Components and Units
+82,T6B05,3.2,Components and Units
+83,T6B06,3.2,Components and Units
+84,T6B07,3.2,Components and Units
+85,T6B08,3.2,Components and Units
+86,T6B09,3.2,Components and Units
+87,T6B10,3.2,Components and Units
+88,T6B11,3.2,Components and Units
+89,T6B12,3.2,Components and Units
+90,T6D01,3.2,Components and Units
+91,T6D07,3.2,Components and Units
+92,T6D09,3.2,Components and Units
+93,T6D10,3.2,Components and Units
+94,T6A09,3.2,Components and Units
+95,T0A04,3.2,Components and Units
+96,T0A05,3.2,Components and Units
+97,T6A08,3.2,Components and Units
+98,T6A12,3.2,Components and Units
+99,T6D02,3.2,Components and Units
+100,T6D04,3.2,Components and Units
+101,T6C01,3.2,Components and Units
+102,T6C02,3.2,Components and Units
+103,T6C03,3.2,Components and Units
+104,T6C04,3.2,Components and Units
+105,T6C05,3.2,Components and Units
+106,T6C06,3.2,Components and Units
+107,T6C07,3.2,Components and Units
+108,T6C08,3.2,Components and Units
+109,T6C09,3.2,Components and Units
+110,T6C10,3.2,Components and Units
+111,T6C11,3.2,Components and Units
+112,T6C12,3.2,Components and Units
+113,T7A05,3.3,Radio Circuits
+114,T7A08,3.3,Radio Circuits
+115,T7A03,3.3,Radio Circuits
+116,T3A01,4.1,Propagation
+117,T3A02,4.1,Propagation
+118,T3A06,4.1,Propagation
+119,T3A07,4.1,Propagation
+120,T3A08,4.1,Propagation
+121,T3A10,4.1,Propagation
+122,T3A12,4.1,Propagation
+123,T3C05,4.1,Propagation
+124,T3C06,4.1,Propagation
+125,T3C08,4.1,Propagation
+126,T3C11,4.1,Propagation
+127,T3A11,4.1,Propagation
+128,T3C01,4.1,Propagation
+129,T3C02,4.1,Propagation
+130,T3C03,4.1,Propagation
+131,T3C04,4.1,Propagation
+132,T3C07,4.1,Propagation
+133,T3C09,4.1,Propagation
+134,T3C10,4.1,Propagation
+135,T3A04,4.2,Antenna and Radio Wave Basics
+136,T3A09,4.2,Antenna and Radio Wave Basics
+137,T3B01,4.2,Antenna and Radio Wave Basics
+138,T3B02,4.2,Antenna and Radio Wave Basics
+139,T3B03,4.2,Antenna and Radio Wave Basics
+140,T9A11,4.2,Antenna and Radio Wave Basics
+141,T5B09,4.2,Antenna and Radio Wave Basics
+142,T5B10,4.2,Antenna and Radio Wave Basics
+143,T5B11,4.2,Antenna and Radio Wave Basics
+144,T7C07,4.3,Feed Lines and SWR
+145,T9B02,4.3,Feed Lines and SWR
+146,T9B03,4.3,Feed Lines and SWR
+147,T9B05,4.3,Feed Lines and SWR
+148,T9B11,4.3,Feed Lines and SWR
+149,T4A02,4.3,Feed Lines and SWR
+150,T7C04,4.3,Feed Lines and SWR
+151,T7C05,4.3,Feed Lines and SWR
+152,T7C06,4.3,Feed Lines and SWR
+153,T9B01,4.3,Feed Lines and SWR
+154,T9B09,4.3,Feed Lines and SWR
+155,T9B12,4.3,Feed Lines and SWR
+156,T9A02,4.4,Practical Antenna Systems
+157,T9A03,4.4,Practical Antenna Systems
+158,T9A04,4.4,Practical Antenna Systems
+159,T9A05,4.4,Practical Antenna Systems
+160,T9A07,4.4,Practical Antenna Systems
+161,T9A08,4.4,Practical Antenna Systems
+162,T9A09,4.4,Practical Antenna Systems
+163,T9A10,4.4,Practical Antenna Systems
+164,T9A12,4.4,Practical Antenna Systems
+165,T3A03,4.4,Practical Antenna Systems
+166,T3A05,4.4,Practical Antenna Systems
+167,T9A01,4.4,Practical Antenna Systems
+168,T9A06,4.4,Practical Antenna Systems
+169,T7C09,4.4,Practical Antenna Systems
+170,T7C10,4.4,Practical Antenna Systems
+171,T7C11,4.4,Practical Antenna Systems
+172,T7D08,4.4,Practical Antenna Systems
+173,T7D09,4.4,Practical Antenna Systems
+174,T9B06,4.4,Practical Antenna Systems
+175,T9B07,4.4,Practical Antenna Systems
+176,T9B08,4.4,Practical Antenna Systems
+177,T9B10,4.4,Practical Antenna Systems
+178,T4A05,4.4,Practical Antenna Systems
+179,T7C02,4.4,Practical Antenna Systems
+180,T7C08,4.4,Practical Antenna Systems
+181,T9B04,4.4,Practical Antenna Systems
+182,T8D09,5.1,Modulation
+183,T8A01,5.1,Modulation
+184,T8A02,5.1,Modulation
+185,T8A04,5.1,Modulation
+186,T8A12,5.1,Modulation
+187,T8A03,5.1,Modulation
+188,T8A05,5.1,Modulation
+189,T8A06,5.1,Modulation
+190,T8A07,5.1,Modulation
+191,T8A08,5.1,Modulation
+192,T8A09,5.1,Modulation
+193,T8A10,5.1,Modulation
+194,T8A11,5.1,Modulation
+195,T4B02,5.2,Transmitters and Receivers
+196,T4B04,5.2,Transmitters and Receivers
+197,T4A12,5.2,Transmitters and Receivers
+198,T7A07,5.2,Transmitters and Receivers
+199,T7C01,5.2,Transmitters and Receivers
+200,T7C03,5.2,Transmitters and Receivers
+201,T2B05,5.2,Transmitters and Receivers
+202,T4B01,5.2,Transmitters and Receivers
+203,T7B01,5.2,Transmitters and Receivers
+204,T2B13,5.2,Transmitters and Receivers
+205,T4B03,5.2,Transmitters and Receivers
+206,T7A01,5.2,Transmitters and Receivers
+207,T7A04,5.2,Transmitters and Receivers
+208,T7A11,5.2,Transmitters and Receivers
+209,T4B06,5.2,Transmitters and Receivers
+210,T4B08,5.2,Transmitters and Receivers
+211,T4B10,5.2,Transmitters and Receivers
+212,T4B12,5.2,Transmitters and Receivers
+213,T7A09,5.2,Transmitters and Receivers
+214,T7A10,5.2,Transmitters and Receivers
+215,T7A06,5.2,Transmitters and Receivers
+216,T8D01,5.3,Digital Communications
+217,T8D12,5.3,Digital Communications
+218,T8D10,5.3,Digital Communications
+219,T8D13,5.3,Digital Communications
+220,T8D08,5.3,Digital Communications
+221,T8D11,5.3,Digital Communications
+222,T8D06,5.3,Digital Communications
+223,T8D03,5.3,Digital Communications
+224,T8D05,5.3,Digital Communications
+225,T4A04,5.3,Digital Communications
+226,T4A06,5.3,Digital Communications
+227,T4A07,5.3,Digital Communications
+228,T8C11,5.3,Digital Communications
+229,T4A01,5.4,Power Supplies and Batteries
+230,T6D05,5.4,Power Supplies and Batteries
+231,T4A03,5.4,Power Supplies and Batteries
+232,T4A11,5.4,Power Supplies and Batteries
+233,T0A10,5.4,Power Supplies and Batteries
+234,T4A09,5.4,Power Supplies and Batteries
+235,T6A10,5.4,Power Supplies and Batteries
+236,T6A11,5.4,Power Supplies and Batteries
+237,T1B10,6.2,Making Contacts
+238,T2A10,6.2,Making Contacts
+239,T2A11,6.2,Making Contacts
+240,T2A04,6.2,Making Contacts
+241,T2A09,6.2,Making Contacts
+242,T7B10,6.2,Making Contacts
+243,T2A02,6.2,Making Contacts
+244,T2B01,6.2,Making Contacts
+245,T2B09,6.2,Making Contacts
+246,T2A05,6.2,Making Contacts
+247,T2A08,6.2,Making Contacts
+248,T2A12,6.2,Making Contacts
+249,T2B10,6.2,Making Contacts
+250,T2B11,6.2,Making Contacts
+251,T8C03,6.2,Making Contacts
+252,T8C04,6.2,Making Contacts
+253,T8C05,6.2,Making Contacts
+254,T8D04,6.2,Making Contacts
+255,T8C01,6.2,Making Contacts
+256,T8C02,6.2,Making Contacts
+257,T4B05,6.3,Using Repeaters
+258,T2A01,6.3,Using Repeaters
+259,T2A03,6.3,Using Repeaters
+260,T2A07,6.3,Using Repeaters
+261,T2B03,6.3,Using Repeaters
+262,T2B02,6.3,Using Repeaters
+263,T2B04,6.3,Using Repeaters
+264,T2B06,6.3,Using Repeaters
+265,T2B07,6.3,Using Repeaters
+266,T2B12,6.3,Using Repeaters
+267,T4A10,6.3,Using Repeaters
+268,T4B07,6.3,Using Repeaters
+269,T4B09,6.3,Using Repeaters
+270,T4B11,6.3,Using Repeaters
+271,T8C06,6.3,Using Repeaters
+272,T8C07,6.3,Using Repeaters
+273,T8C08,6.3,Using Repeaters
+274,T8C09,6.3,Using Repeaters
+275,T8C10,6.3,Using Repeaters
+276,T8D02,6.3,Using Repeaters
+277,T8D07,6.3,Using Repeaters
+278,T2C05,6.4,Nets
+279,T2C07,6.5,Communications for Public Service
+280,T2C02,6.5,Communications for Public Service
+281,T2C03,6.5,Communications for Public Service
+282,T2C08,6.5,Communications for Public Service
+283,T2C10,6.5,Communications for Public Service
+284,T2C11,6.5,Communications for Public Service
+285,T1A10,6.5,Communications for Public Service
+286,T2C04,6.5,Communications for Public Service
+287,T2C06,6.5,Communications for Public Service
+288,T2C01,6.5,Communications for Public Service
+289,T2C09,6.5,Communications for Public Service
+290,T1B02,6.6,Satellite Operating
+291,T1E02,6.6,Satellite Operating
+292,T1A07,6.6,Satellite Operating
+293,T8B05,6.6,Satellite Operating
+294,T8B07,6.6,Satellite Operating
+295,T8B09,6.6,Satellite Operating
+296,T8B10,6.6,Satellite Operating
+297,T8B03,6.6,Satellite Operating
+298,T8B06,6.6,Satellite Operating
+299,T8B01,6.6,Satellite Operating
+300,T8B02,6.6,Satellite Operating
+301,T8B04,6.6,Satellite Operating
+302,T8B08,6.6,Satellite Operating
+303,T8B11,6.6,Satellite Operating
+304,T8B12,6.6,Satellite Operating
+305,T1A02,7.1,Licensing Terms
+306,T1A01,7.1,Licensing Terms
+307,T1A04,7.1,Licensing Terms
+308,T1C01,7.1,Licensing Terms
+309,T1F11,7.1,Licensing Terms
+310,T1A05,7.1,Licensing Terms
+311,T1C10,7.1,Licensing Terms
+312,T1C08,7.1,Licensing Terms
+313,T1C09,7.1,Licensing Terms
+314,T1C11,7.1,Licensing Terms
+315,T1C04,7.1,Licensing Terms
+316,T1C07,7.1,Licensing Terms
+317,T1B01,7.2,Bands and Privileges
+318,T1B03,7.2,Bands and Privileges
+319,T1B04,7.2,Bands and Privileges
+320,T1B06,7.2,Bands and Privileges
+321,T1B05,7.2,Bands and Privileges
+322,T1B07,7.2,Bands and Privileges
+323,T1B11,7.2,Bands and Privileges
+324,T1B12,7.2,Bands and Privileges
+325,T1B08,7.2,Bands and Privileges
+326,T1A08,7.2,Bands and Privileges
+327,T1A09,7.2,Bands and Privileges
+328,T1C03,7.3,International Rules
+329,T1D01,7.3,International Rules
+330,T1C06,7.3,International Rules
+331,T1C02,7.4,Call Signs
+332,T1C05,7.4,Call Signs
+333,T1E01,8.1,Control Operators
+334,T1E02,8.1,Control Operators
+335,T1E03,8.1,Control Operators
+336,T1E04,8.1,Control Operators
+337,T1E05,8.1,Control Operators
+338,T1E06,8.1,Control Operators
+339,T1E07,8.1,Control Operators
+340,T1E11,8.1,Control Operators
+341,T1A03,8.2,Identification
+342,T1D11,8.2,Identification
+343,T1F03,8.2,Identification
+344,T1F04,8.2,Identification
+345,T1F05,8.2,Identification
+346,T1F02,8.2,Identification
+347,T1F06,8.2,Identification
+348,T2A06,8.2,Identification
+349,T1A11,8.3,Interference
+350,T2B08,8.3,Interference
+351,T1F07,8.4,Third-party Communications
+352,T1F08,8.4,Third-party Communications
+353,T1E09,8.5,Remote and Automatic Operation
+354,T1E10,8.5,Remote and Automatic Operation
+355,T1F10,8.5,Remote and Automatic Operation
+356,T1D06,8.6,Prohibited Transmissions
+357,T1D05,8.6,Prohibited Transmissions
+358,T1D08,8.6,Prohibited Transmissions
+359,T1D03,8.6,Prohibited Transmissions
+360,T1D02,8.6,Prohibited Transmissions
+361,T1D04,8.6,Prohibited Transmissions
+362,T1D07,8.6,Prohibited Transmissions
+363,T1D09,8.6,Prohibited Transmissions
+364,T1D10,8.6,Prohibited Transmissions
+365,T0A02,9.1,Electrical Safety
+366,T0A11,9.1,Electrical Safety
+367,T0A03,9.1,Electrical Safety
+368,T0A06,9.1,Electrical Safety
+369,T0A08,9.1,Electrical Safety
+370,T0A07,9.1,Electrical Safety
+371,T0A09,9.1,Electrical Safety
+372,T0B01,9.1,Electrical Safety
+373,T0B10,9.1,Electrical Safety
+374,T0B11,9.1,Electrical Safety
+375,T4A08,9.2,Managing RF in Your Station
+376,T7B11,9.2,Managing RF in Your Station
+377,T7B04,9.3,RF Interference (RFI)
+378,T7B03,9.3,RF Interference (RFI)
+379,T7B02,9.3,RF Interference (RFI)
+380,T7B05,9.3,RF Interference (RFI)
+381,T7B07,9.3,RF Interference (RFI)
+382,T7B09,9.3,RF Interference (RFI)
+383,T6D03,9.3,RF Interference (RFI)
+384,T7B06,9.3,RF Interference (RFI)
+385,T7B08,9.3,RF Interference (RFI)
+386,T0C01,9.4,RF Exposure
+387,T0C05,9.4,RF Exposure
+388,T0C07,9.4,RF Exposure
+389,T0C12,9.4,RF Exposure
+390,T0C13,9.4,RF Exposure
+391,T0C02,9.4,RF Exposure
+392,T0C03,9.4,RF Exposure
+393,T0C10,9.4,RF Exposure
+394,T0C11,9.4,RF Exposure
+395,T0C04,9.4,RF Exposure
+396,T0C06,9.4,RF Exposure
+397,T0C09,9.4,RF Exposure
+398,T0C08,9.4,RF Exposure
+399,T0B04,9.5,Mechanical Safety
+400,T0B05,9.5,Mechanical Safety
+401,T0B06,9.5,Mechanical Safety
+402,T0B08,9.5,Mechanical Safety
+403,T0B09,9.5,Mechanical Safety
+404,T0B02,9.5,Mechanical Safety
+405,T0B03,9.5,Mechanical Safety
+406,T0B07,9.5,Mechanical Safety
