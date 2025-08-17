@@ -1,24 +1,15 @@
 import json
-import random
-import string
-import argparse
-from collections import defaultdict
 from pathlib import Path
-from datetime import datetime
 import shutil
 import glob
 import os
+import pandas as pd
 
 # Files relative to this script
 BASE_DIR = Path(__file__).parent
 LICENSE_CLASS = "technician"
 POOL_FILE = BASE_DIR / "pool" / f"{LICENSE_CLASS}.json"
 QUIZ_DIR  = BASE_DIR / "quiz"
-
-# # Create timestamp-based filenames
-# TIMESTAMP = datetime.now().strftime("%Y%m%d_%H%M%S")
-# EXAM_FILE = EXAMS_DIR / f"{TIMESTAMP}_{LICENSE_CLASS}_exam.txt"
-
 
 def load_question_pool(filename):
     """
@@ -73,14 +64,24 @@ def main():
 
         figs_dct[fig_name] = bname
 
-    # Initialze Subelement Quiz Files
+    # Initialze Subelement Dictionary
     sub_els = {}
     for inx in range(10):
         sub_el  = f'T{inx}'
         sub_csv = QUIZ_DIR / f'{sub_el}.csv'
         sub_els[sub_el] = {'csv':sub_csv,'count':0}
 
+    # Initialize the ARRL Module Dictionary
+    mod_df = pd.read_csv(BASE_DIR / "pool" / "arrl_modules.csv", encoding='utf-8')
+    mod_nrs = mod_df['Module'].unique()
+    mods   = {}
+    for mod_nr in mod_nrs:
+        mod_name   = f'ARRL Module {mod_nr}'
+        mod_csv    = QUIZ_DIR / f'arrl_mod_{mod_nr}.csv'
+        mods[mod_nr] = {'csv':mod_csv, 'name':mod_name, 'count':0}
+
     fig_qIDs = []
+    missing_qIDs = [] # Keep track of questions that are not found in arrl_modules.csv
     for qq in pool:      
         qID      = qq.get("id")
         sub_el   = qID[0:2]
@@ -108,8 +109,6 @@ def main():
         has_fig = False
         for fig_name,fig in figs_dct.items():
             if fig_name in question:
-                # tta("Image,images/MC1.jpg,,,")
-                # tta("Image,,,,")
                 tta(f"Image,images/{fig},,,")
                 has_fig = True
                 fig_qIDs.append(qID)
@@ -119,26 +118,49 @@ def main():
         tta("Feedback,,,,")
         tta("")
 
+        # Write to sub-element quiz file
         with open(sub_els[sub_el]['csv'], 'a', encoding='utf-8') as f:
             f.write("\n".join(tt))
             f.write("\n")
-       
         sub_els[sub_el]['count'] += 1
 
-        # # print(qq)
-        # for ll in tt:
-        #     print(ll)
+        # Write to ARRL module quiz file
+        inxs = mod_df.index[mod_df['qID'] == qID].tolist()
 
-        # print("Added question to subelement:", sub_el)
+        if len(inxs) > 1:
+            print(f"NOTICE: Question ID {qID} found multiple times in arrl_modules.csv")
+        if len(inxs) >= 1:
+            for mod_nr_inx in inxs:
+                mod_nr = mod_df.at[mod_nr_inx, 'Module']
+                with open(mods[mod_nr]['csv'], 'a', encoding='utf-8') as f:
+                    f.write("\n".join(tt))
+                    f.write("\n")
+                mods[mod_nr]['count'] += 1
+        else:
+            missing_qIDs.append(qID)
+            print(f"WARNING: Question ID {qID} not found in arrl_modules.csv")
 
     print()
     print("########################################")
     print("All quiz files generated in:", QUIZ_DIR)
     print()
     print("Total questions generated:", len(pool))
+
+    print()
+    print("FCC Subelements:")
     for sub_el, data in sub_els.items():
         print(f"  - {sub_el}: {data['count']} questions")
 
+    print()
+    print("ARRL Modules:")
+    for mod_nr, data in mods.items():
+        print(f"  - {data['name']}: {data['count']} questions")
+
+    print()
+    if len(missing_qIDs) > 0:
+        print(f"WARNING: The following {len(missing_qIDs)} questions were not found in arrl_modules.csv:")
+        for qID in missing_qIDs:
+            print(f"  - {qID}")
     print()
     if len(fig_qIDs) > 0:
         print(f"WARNING: The following {len(fig_qIDs)} questions contain figures.")
